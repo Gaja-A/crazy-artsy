@@ -19,7 +19,7 @@ const CollectionBrands = () => {
                             <div className="fade-box">
                                 <p className="card-text">{i.description}</p>
                             </div>
-                            <p className="mt-3"><Link to={'/crazy-artsy/arts'} className="btn btn-crazy">{i.text}</Link></p>
+                            <p className="mt-3"><Link to={'/arts'} className="btn btn-crazy">{i.text}</Link></p>
                         </div>
 
                     </div>
