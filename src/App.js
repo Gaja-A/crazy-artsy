@@ -174,9 +174,9 @@ const App = () => {
             ? 
               <span>
                 <a className="btn-continue btn mr-2" onClick={isHide}>Continuer mes achats</a>
-                <a className="btn btn-crazy" href="/crazy-artsy/checkout" onClick={isHide}>Commander</a>
+                <Link className="btn btn-crazy" to={"/crazy-artsy/checkout"} onClick={isHide}>Commander</Link>
               </span>
-            : <a className="btn btn-crazy" href="/crazy-artsy/arts" onClick={isHide}>Ajouter au panier</a>
+            : <Link className="btn btn-crazy" to={"/crazy-artsy/arts"} onClick={isHide}>Ajouter au panier</Link>
           }  
         </Modal.Footer>
       </Modal>
@@ -186,9 +186,9 @@ const App = () => {
         <div>
           <nav className="navbar navbar-expand-md fixed-top col-12 navbar-dark">
             <div className="d-flex">
-              <a href="/crazy-artsy/" className="navbar-brand logo">
+              <Link to={"/crazy-artsy/"} className="navbar-brand logo">
                 <FaPaintBrush /> CRAZY ARTSY
-              </a>
+              </Link>
               <a className="nav-link" href="#" id="mode" onClick={mode}>
                 <FaSun style={{"width": "26px", "height": "30px"}} />  
               </a>

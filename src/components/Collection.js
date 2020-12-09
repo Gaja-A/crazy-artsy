@@ -1,5 +1,6 @@
 
 import CollectionList from '../json/CollectionList'
+import { Link } from 'react-router-dom';  /* ROUTER */
 
 const CollectionBrands = () => {
     return (
@@ -18,7 +19,7 @@ const CollectionBrands = () => {
                             <div className="fade-box">
                                 <p className="card-text">{i.description}</p>
                             </div>
-                            <p className="mt-3"><a className="btn btn-crazy" href="/crazy-artsy/arts">{i.text}</a></p>
+                            <p className="mt-3"><Link to={'/crazy-artsy/arts'} className="btn btn-crazy">{i.text}</Link></p>
                         </div>
 
                     </div>
