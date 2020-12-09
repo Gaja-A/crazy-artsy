@@ -1,38 +1,396 @@
-.App {
-  text-align: center;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  margin: auto;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* GENERAL STYLES */
+.container-fluid {
+  font-size: 1.02rem;
+}
+.btn, a {
+  cursor: pointer;
+  outline: none;
+}
+.btn-crazy {
+  background-color: #e66198f1!important;
+  color: #fff!important;
+}
+.btn-continue {
+  color: #b7396e!important;
+  background-color: #fdbad5bf!important;
+}
+.btn-crazy:hover,
+.btn-continue:hover,
+button.shop_it:hover {
+  background-color: #fd6ca9f1!important;
+  color: #fff!important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* DARK MODE */
+.dark-mode {
+  background-color: #4c4c4c!important;
+  background: #4c4c4c!important;
+  color: #fff!important;
+}
+.dark-mode-light {
+  background-color: #777777!important;
+  background: #777777!important;
+  color: #fff!important;
+}
+#mode:hover {
+  background-color: #e88eb3!important;
+  color: #fff;
+  border-radius: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* MODAL */
+.modal-content {
+  color: #272424;
+}
+.cart_block {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart_text,
+button.cart_text {
+  margin-bottom: 2rem;
+}
+.cart_text:nth-child(2) {
+  width: 50%;
+  padding-left: 0.5rem;
+}
+.cart_text:nth-child(3) {
+  width: 15%;
+  padding-right: 0.5rem;
+}
+.cart_block img {
+  width: 5rem;
+  height: 5rem;
+}
+.cart_total {
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #74344e;
+}
+
+/* HEADER */
+.logo {
+  font-weight: 600;
+  font-size: 1.4rem!important;
+}
+nav.navbar {
+  height: 4rem;
+  background-color: #e66198f1;
+  color: #fff;
+}
+.nav-link, 
+.logo {
+  color: #fff!important;
+}
+.nav-link:hover{
+  background-color: #e66198f1!important;
+  border-radius: 1em;
+}
+.navbar-toggler {
+  padding: .25rem!important;
+}
+.cart_items {
+  position: absolute;
+  width: 25px;    
+  border-radius: 50%;
+  background-color: #e66198f1;
+  color: #FFF;
+  text-align: center;
+  margin: -2.6rem 0 0 1rem;
+}
+
+/* HOME - CAROUSEL*/
+.home-image,
+.carousel {
+  position: relative;
+  background-size: cover;
+  min-height: 97vh;
+}
+.home-image {
+  margin-bottom: 2.5rem;
+  background-image: url( "https://i2.wp.com/www.galeriethomasschulte.de/wp-content/uploads/2020/10/Installation-view_Albrecht-Schnider_Galerie-Thomas-Schulte_2020_start.png?fit=1919%2C1079&ssl=1" );
+}
+.carousel {
+  background-image: url( "https://www.grandimage.com/wp-content/uploads/2020/04/Portside-079-scaled-aspect-ratio-1920-1080-3-scaled.jpg" );
+}
+.about-title {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: absolute;
+  left: 0;
+  top: 5rem;
+  right: 0;
+  bottom: 0;
+  color: #b7396e;
+  font-size: 2rem;
+  font-family: cursive;
+  font-weight: bold;
+}
+.about-text {
+  text-align: justify;
+}
+.about-text strong {
+  color: #b7396e;
+}
+.about-text h2 {
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #b7396e;
+}
+.about-block {
+  margin: 2rem auto;
+  text-align: center;
+  background-color: #f57aad38;
+  border-radius: 0.5em;
+  padding: 1.5rem;
+  font-weight: 600;
+  color: #b7396e;
+  line-height: 2.2rem;
+  border: 1px solid #e66198;
+}
+
+/* COLLECTIONS */
+.collection-content {
+  margin-top: 3rem;
+}
+.arrow-right {
+  background: #e66198f1;
+  margin-top: 2rem;
+  padding-left: 0.5rem;
+  line-height: 40px;
   color: white;
+  animation-name: move-right-to-left;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternative;
 }
-
-.App-link {
-  color: #61dafb;
+.arrow-right:after {
+  content: "";
+  position: absolute;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #e66198f1;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes move-right-to-left {
+  0% {
+    transform: translateX(-5%);
+    box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.2);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateX(-15%);
+    box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: translateX(-5%);
+    box-shadow: -3px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+.collection-card {
+  overflow: hidden;
+  overflow-x: scroll;
+}
+::-webkit-scrollbar {
+  background: transparent; /* to make scrollbar transparent */
+}
+.collection-card .card {
+  border: none;
+  min-width: auto;
+}
+.collection-card .collection_image {
+  width: 400px;
+  height: 475px;
+}
+.collection-card .fade-box {
+  background-color: #f192bad2;
+  position: absolute;
+  top: 4.5rem;
+  color: rgb(0, 0, 0);
+  width: 400px;
+  height: 475px;
+  transition: all 300ms ease-out;
+  opacity: 0;
+  padding: 130px 20px;
+}
+.collection-card .card-text {
+  font-size: 1.8rem;
+  opacity: 1;
+  transition: all 300ms ease-out;
+  transform: translateY(30px);
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -webkit-transform: translateY(30px);
+}
+.collection-card .card-body:hover .card-text,
+.collection-card .card-body:hover .fade-box {
+  opacity: 0.8;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+}
+
+/* PRODUCTS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 15px;
+}
+.products-content {
+  margin-top: 2rem;
+  position: relative;
+}
+.product-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+.product-details {
+  background-color: #fdbad5bf;
+  border-radius: .5em;
+  text-align: center;
+  justify-content: space-around;
+  width: 43vh;
+  color: #b7396e;
+  font-weight: 500;
+}
+.product_image {
+  overflow: hidden;
+}
+.product_image img {
+  width: 100%;
+  transition-duration: .5s;
+  height: 40vh;
+  width: 35vh;
+}
+.product_image:hover img {
+  transform: scale(1.2);
+  transition-duration: .5s;
+}
+
+/* SEARCH BAR */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+.search-input {
+  width: 240px;
+  outline: none;
+  padding: 0 6px;
+  border: 1px solid #e66198f1;
+  border-radius: 5em;
+  line-height: 40px;
+}
+.search-button {
+  background-color: #fff;
+  color: #e66198f1;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  margin-left: 12.5rem;
+  margin-top: auto;
+  border: 1px solid #e66198f1;
+  border-radius: 50%;
+}
+.search-box:hover > .search-button {
+  color: #fff;
+  background-color : #e66198f1;
+}
+
+/* CONTACT FORM */
+.contact-content {
+  width: 70%;
+  margin: auto;
+  margin-top: 6rem;
+}
+.google-map {
+  position: relative;
+  width: 100%;
+  padding-bottom: 40%; 
+}
+.google-map > * {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* CHECKOUT */
+.checkout {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 8rem;
+}
+a.checkout-btn:hover {
+  background-color: #e4f8e8e1;
+}
+
+/* FOOTER */
+footer {
+  background-color: #fdbad5bf;
+}
+.newsletter {
+  margin: 4rem auto;
+  padding-top: 3rem;
+  font-style: italic;
+  color: #b7396e;
+  font-size: 1.25rem;
+}
+.newsletter svg {
+  margin-bottom: 0.4rem;
+  margin-left: 1rem;
+}
+.newsletter svg:hover {
+  fill: #e66198f1;
+  cursor: pointer;
+}
+#error-message {
+  font-size: 1.02rem;
+  font-style: normal;
+}
+.copyright-info {
+  background-color: #e76a9e;
+  color: #fff;
+  font-size: 0.92rem;
+  padding: 1rem 0;
+}
+
+/* HEADER - MOBILE */
+@media screen and (max-width:767px) {
+  .navbar-collapse .navbar-nav li {
+    background-color: #e5689c;
+    color: #fff;
+    text-align: center;
+  }
+  .cart_items {
+    margin: -2.6rem auto;
+    position: relative;
+  }
+  .shopping-cart svg {
+    margin-left: -1.5rem;
+  }
+  .navbar-nav .nav-link {
+    padding: 2rem 0;
+  }
+  .btn-continue {
+    margin-bottom: .5rem!important;
   }
 }
