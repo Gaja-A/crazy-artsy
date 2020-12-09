@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/crazy-artsy/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/crazy-artsy/static/js/main.e77b25f2.chunk.js",
+    "main.js.map": "/crazy-artsy/static/js/main.e77b25f2.chunk.js.map",
+    "runtime-main.js": "/crazy-artsy/static/js/runtime-main.923f2277.js",
+    "runtime-main.js.map": "/crazy-artsy/static/js/runtime-main.923f2277.js.map",
+    "static/js/2.392f6a03.chunk.js": "/crazy-artsy/static/js/2.392f6a03.chunk.js",
+    "static/js/2.392f6a03.chunk.js.map": "/crazy-artsy/static/js/2.392f6a03.chunk.js.map",
+    "static/js/3.abd9705f.chunk.js": "/crazy-artsy/static/js/3.abd9705f.chunk.js",
+    "static/js/3.abd9705f.chunk.js.map": "/crazy-artsy/static/js/3.abd9705f.chunk.js.map",
+    "index.html": "/crazy-artsy/index.html",
+    "static/css/main.ab7136cd.chunk.css.map": "/crazy-artsy/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.392f6a03.chunk.js.LICENSE.txt": "/crazy-artsy/static/js/2.392f6a03.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/crazy-artsy/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.923f2277.js",
+    "static/js/2.392f6a03.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.e77b25f2.chunk.js"
+  ]
+}
