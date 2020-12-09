@@ -26,7 +26,7 @@ const Home = () => {
                             <p>
                                 Nous avons une qualité de collections uniques. Découvrez nos collections modernes et nos nouvelles collections dans notre galerie.
                             </p>
-                            <a className="btn btn-crazy p-2" href="/collections">Voir la galerie d'art en ligne</a>
+                            <a className="btn btn-crazy p-2" href="/crazy-artsy/collections">Voir la galerie d'art en ligne</a>
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -34,7 +34,7 @@ const Home = () => {
                             <p>
                                 Notre but est de fournir la meilleure qualité d'art à un coût équitable. Découvrez nos arts modernes et commandez chez nous dès aujourd'hui.
                             </p>
-                            <a className="btn btn-crazy p-2" href="/arts">Voir le monde en peinture</a>
+                            <a className="btn btn-crazy p-2" href="/crazy-artsy/arts">Voir le monde en peinture</a>
                         </div>
                     </div>
                 </div>

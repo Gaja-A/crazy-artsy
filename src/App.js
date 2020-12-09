@@ -174,9 +174,9 @@ const App = () => {
             ? 
               <span>
                 <a className="btn-continue btn mr-2" onClick={isHide}>Continuer mes achats</a>
-                <a className="btn btn-crazy" href="/checkout" onClick={isHide}>Commander</a>
+                <a className="btn btn-crazy" href="/crazy-artsy/checkout" onClick={isHide}>Commander</a>
               </span>
-            : <a className="btn btn-crazy" href="/arts" onClick={isHide}>Ajouter au panier</a>
+            : <a className="btn btn-crazy" href="/crazy-artsy/arts" onClick={isHide}>Ajouter au panier</a>
           }  
         </Modal.Footer>
       </Modal>
@@ -186,7 +186,7 @@ const App = () => {
         <div>
           <nav className="navbar navbar-expand-md fixed-top col-12 navbar-dark">
             <div className="d-flex">
-              <a href="/" className="navbar-brand logo">
+              <a href="/crazy-artsy/" className="navbar-brand logo">
                 <FaPaintBrush /> CRAZY ARTSY
               </a>
               <a className="nav-link" href="#" id="mode" onClick={mode}>
@@ -198,10 +198,10 @@ const App = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav ml-auto">
-                <li><Link to={'/home'} className="nav-link"> Accueil </Link></li>
-                <li><Link to={'/collections'} className="nav-link">Collections</Link></li>
-                <li><Link to={'/arts'} className="nav-link">Œuvres</Link></li>
-                <li><Link to={'/contact'} className="nav-link">Contactez-nous</Link></li>
+                <li><Link to={'/crazy-artsy/home'} className="nav-link"> Accueil </Link></li>
+                <li><Link to={'/crazy-artsy/collections'} className="nav-link">Collections</Link></li>
+                <li><Link to={'/crazy-artsy/arts'} className="nav-link">Œuvres</Link></li>
+                <li><Link to={'/crazy-artsy/contact'} className="nav-link">Contactez-nous</Link></li>
                 <li onClick={isActive}>
                   <a className="nav-link shopping-cart" href="#">
                     <FaShoppingCart style={{"width": "25px", "height": "30px"}} />
@@ -214,22 +214,22 @@ const App = () => {
             </div>
           </nav>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/crazy-artsy/">
               {Carousel}
             </Route>
-            <Route exact path="/home">
+            <Route exact path="/crazy-artsy/home">
               {home}{footer}
             </Route>
-            <Route path="/collections">
+            <Route path="/crazy-artsy/collections">
               {collection}{footer}
             </Route>
-            <Route path="/arts">
+            <Route path="/crazy-artsy/arts">
               {products}{footer}
             </Route>
-            <Route path="/checkout">
+            <Route path="/crazy-artsy/checkout">
               {checkout}{footer}
             </Route>
-            <Route path="/contact">
+            <Route path="/crazy-artsy/contact">
               {contact}{footer}                
             </Route>
           </Switch>
