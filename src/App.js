@@ -129,10 +129,14 @@ const App = () => {
     const [isShow, setShow] = useState(false);
 
     const isActive = () => {
-        setShow(true)
+      setShow(true)
     }
     const isHide = () => {
-        setShow(false)
+      setShow(false)
+    }
+    const isHideZero = () => {
+      setShow(false)
+      selection.length = 0 
     }
   
     const listItems = selection.map((i) =>
@@ -174,7 +178,7 @@ const App = () => {
             ? 
               <span>
                 <a className="btn-continue btn mr-2" onClick={isHide}>Continuer mes achats</a>
-                <Link className="btn btn-crazy" to={"/checkout"} onClick={isHide}>Commander</Link>
+                <Link className="btn btn-crazy" to={"/checkout"} onClick={isHideZero}>Commander</Link>
               </span>
             : <Link className="btn btn-crazy" to={"/arts"} onClick={isHide}>Ajouter au panier</Link>
           }  
@@ -203,12 +207,12 @@ const App = () => {
                 <li><Link to={'/arts'} className="nav-link">Œuvres</Link></li>
                 <li><Link to={'/contact'} className="nav-link">Contactez-nous</Link></li>
                 <li onClick={isActive}>
-                  <a className="nav-link shopping-cart" href="#">
+                  <span className="nav-link shopping-cart">
                     <FaShoppingCart style={{"width": "25px", "height": "30px"}} />
                     <div className="cart_items border border-light">
                       <span><strong>{selection.length}</strong></span>
                     </div>
-                  </a>
+                  </span>
                 </li>
               </ul>
             </div>
