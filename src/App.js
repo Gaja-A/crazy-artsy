@@ -193,7 +193,7 @@ const App = () => {
               <Link to={"/"} className="navbar-brand logo">
                 <FaPaintBrush /> CRAZY ARTSY
               </Link>
-              <a className="nav-link" href="#" id="mode" onClick={mode}>
+              <a className="nav-link" id="mode" onClick={mode}>
                 <FaSun style={{"width": "26px", "height": "30px"}} />  
               </a>
             </div>
