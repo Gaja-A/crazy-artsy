@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/crazy-artsy/static/css/main.41c99689.chunk.css",
-    "main.js": "/crazy-artsy/static/js/main.0a717910.chunk.js",
-    "main.js.map": "/crazy-artsy/static/js/main.0a717910.chunk.js.map",
+    "main.css": "/crazy-artsy/static/css/main.961e84d1.chunk.css",
+    "main.js": "/crazy-artsy/static/js/main.2493117d.chunk.js",
+    "main.js.map": "/crazy-artsy/static/js/main.2493117d.chunk.js.map",
     "runtime-main.js": "/crazy-artsy/static/js/runtime-main.c8e23abf.js",
     "runtime-main.js.map": "/crazy-artsy/static/js/runtime-main.c8e23abf.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/crazy-artsy/static/css/2.20aa2d7b.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.c52d0e2e.chunk.js.map": "/crazy-artsy/static/js/3.c52d0e2e.chunk.js.map",
     "index.html": "/crazy-artsy/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/crazy-artsy/static/css/2.20aa2d7b.chunk.css.map",
-    "static/css/main.41c99689.chunk.css.map": "/crazy-artsy/static/css/main.41c99689.chunk.css.map",
+    "static/css/main.961e84d1.chunk.css.map": "/crazy-artsy/static/css/main.961e84d1.chunk.css.map",
     "static/js/2.57c4fbf1.chunk.js.LICENSE.txt": "/crazy-artsy/static/js/2.57c4fbf1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c8e23abf.js",
     "static/css/2.20aa2d7b.chunk.css",
     "static/js/2.57c4fbf1.chunk.js",
-    "static/css/main.41c99689.chunk.css",
-    "static/js/main.0a717910.chunk.js"
+    "static/css/main.961e84d1.chunk.css",
+    "static/js/main.2493117d.chunk.js"
   ]
 }
