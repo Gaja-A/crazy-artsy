@@ -242,7 +242,7 @@ nav.navbar {
 /* PRODUCTS */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;
 }
 .products-content {
@@ -261,6 +261,7 @@ nav.navbar {
   width: 43vh;
   color: #b7396e;
   font-weight: 500;
+  margin: auto;
 }
 .product_image {
   overflow: hidden;
