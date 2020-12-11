@@ -264,7 +264,7 @@ const App = () => {
             selection.length > 0 
             ? 
               <span>
-                <a href="/#" className="btn-continue btn mr-2" onClick={isHide}>Continuer mes achats</a>
+                <a href="" className="btn-continue btn mr-2" onClick={isHide}>Continuer mes achats</a>
                 <Link className="btn btn-crazy" to={"/checkout"} onClick={isHideZero}>Commander</Link>
               </span>
             : <Link className="btn btn-crazy" to={"/arts"} onClick={isHide}>Ajouter au panier</Link>
@@ -280,7 +280,7 @@ const App = () => {
               <Link to={"/"} className="navbar-brand logo">
                 <FaPaintBrush /> CRAZY ARTSY
               </Link>
-              <a href="/#" className="nav-link" id="mode" onClick={mode}>
+              <a href="" className="nav-link" id="mode" onClick={mode}>
                 <FaSun style={{"width": "26px", "height": "30px"}} />  
               </a>
             </div>
