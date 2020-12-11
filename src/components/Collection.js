@@ -2,7 +2,7 @@
 import CollectionList from '../json/CollectionList'
 import { Link } from 'react-router-dom';  /* ROUTER */
 
-const CollectionBrands = () => {
+const Collection = () => {
     return (
         <div className="collection-content">
             <div className="d-flex">
@@ -29,4 +29,4 @@ const CollectionBrands = () => {
     );
 }
     
-export default CollectionBrands;
+export default Collection;

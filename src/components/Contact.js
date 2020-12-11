@@ -49,7 +49,7 @@ const Contact = () => {
             </div>
             <div className="contact-details">
                 <div className="google-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2873.1416929924026!2d3.7057039154190674!3d43.93574114213253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b3f65bfe775ded%3A0x1e3c0b4e56a85c4d!2sCrazy%20Art!5e0!3m2!1sfr!2sfr!4v1606390904327!5m2!1sfr!2sfr" width="700" height="500" frameBorder="0" allowFullScreen="" tabIndex="0"></iframe>
+                    <iframe title="Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2873.1416929924026!2d3.7057039154190674!3d43.93574114213253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b3f65bfe775ded%3A0x1e3c0b4e56a85c4d!2sCrazy%20Art!5e0!3m2!1sfr!2sfr!4v1606390904327!5m2!1sfr!2sfr" width="700" height="500" frameBorder="0" allowFullScreen="" tabIndex="0"></iframe>
                 </div>
             </div>
         </div>

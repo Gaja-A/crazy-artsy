@@ -241,9 +241,13 @@ nav.navbar {
 
 /* PRODUCTS */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-gap: 15px;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 15px; */
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .products-content {
   margin-top: 2rem;
@@ -261,6 +265,7 @@ nav.navbar {
   width: 43vh;
   color: #b7396e;
   font-weight: 500;
+  margin: auto;
 }
 .product_image {
   overflow: hidden;
@@ -275,6 +280,11 @@ nav.navbar {
   transform: scale(1.2);
   transition-duration: .5s;
 }
+.notfound-message {
+  position: initial!important;
+  margin: 3rem auto;
+  text-align: center;
+}
 
 /* SEARCH BAR */
 .search-box {
@@ -282,6 +292,8 @@ nav.navbar {
   justify-content: center;
   align-items: center;
   margin-top: 2.5rem;
+  margin-left: auto;
+  position: relative;
 }
 .search-input {
   width: 240px;
@@ -306,6 +318,55 @@ nav.navbar {
 .search-box:hover > .search-button {
   color: #fff;
   background-color : #e66198f1;
+}
+
+/* FILTER SELECT */
+.checkbox-select {
+  position: relative;
+  margin-top: 2.5rem;
+  padding: 0 1rem;
+}
+.selectBox select {
+  font-weight: bold;
+  background: #fff;
+  color: #e8679c;
+  border: 1px solid #e8679c;
+  padding: 10px;
+}
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#checkboxes {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border-left: 1px solid #e8679c;
+  border-right: 1px solid #e8679c;
+}
+#checkboxes label {
+  display: block;
+  padding: 10px 44.79px;
+  line-height: 20px;
+  margin: auto;
+  border-bottom: 1px solid #e8679c;
+}
+#checkboxes label:hover {
+  background-color: #fdbad5bf;
+}
+@media screen and (max-width: 530px) {
+  .filters {
+    flex-wrap: wrap;
+    flex-flow: wrap-reverse;
+    justify-content: center;
+  }
+  .search-box {
+    margin: auto;
+    margin-top: 3rem;
+  }
 }
 
 /* CONTACT FORM */
