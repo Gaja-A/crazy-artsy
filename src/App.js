@@ -264,7 +264,7 @@ const App = () => {
             selection.length > 0 
             ? 
               <span>
-                <a href="" className="btn-continue btn mr-2" onClick={isHide}>Continuer mes achats</a>
+                <Link className="btn-continue btn mr-2" to={"/arts"} onClick={isHide}>Continuer mes achats</Link>
                 <Link className="btn btn-crazy" to={"/checkout"} onClick={isHideZero}>Commander</Link>
               </span>
             : <Link className="btn btn-crazy" to={"/arts"} onClick={isHide}>Ajouter au panier</Link>
@@ -280,9 +280,9 @@ const App = () => {
               <Link to={"/"} className="navbar-brand logo">
                 <FaPaintBrush /> CRAZY ARTSY
               </Link>
-              <a href="" className="nav-link" id="mode" onClick={mode}>
+              <button className="btn nav-link" id="mode" onClick={mode}>
                 <FaSun style={{"width": "26px", "height": "30px"}} />  
-              </a>
+              </button>
             </div>
             <button className="navbar-toggler" style={{"outline": "none"}} type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

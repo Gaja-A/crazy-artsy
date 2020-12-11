@@ -43,6 +43,11 @@ button.shop_it:hover {
   color: #fff;
   border-radius: 50%;
 }
+#mode:hover, 
+#mode:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 /* MODAL */
 .modal-content {
