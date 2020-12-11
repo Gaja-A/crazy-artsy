@@ -112,6 +112,9 @@ nav.navbar {
   text-align: center;
   margin: -2.6rem 0 0 1rem;
 }
+.shopping-cart {
+  cursor: pointer;
+}
 
 /* HOME - CAROUSEL*/
 .home-image,
@@ -349,6 +352,7 @@ nav.navbar {
   display: none;
   position: absolute;
   background: #fff;
+  color: #000;
   border-left: 1px solid #e8679c;
   border-right: 1px solid #e8679c;
 }

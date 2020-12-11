@@ -121,45 +121,45 @@ const App = () => {
         <div>
           <section className="d-flex filters mx-4 my-2">
               <form>
-                <div class="checkbox-select">
+                <div className="checkbox-select">
 
-                  <div class="selectBox" onClick={() => $("#checkboxes").toggle()}>
+                  <div className="selectBox" onClick={() => $("#checkboxes").toggle()}>
                     <select>
                       <option>Filtrer par catégorie</option>
                     </select>
-                    <div class="overSelect"></div>
+                    <div className="overSelect"></div>
                   </div>
 
                   <div id="checkboxes">
 
-                    {/* <label for="all">
+                    {/* <label htmlFor="all">
                       <input type="checkbox" id="all" className="cat-check-all" 
                             onClick={() => showAll("Oil") || showAll("Gouache") || showAll("Acrylic") ||
                                            showAll("Watercolor") || showAll("Encaustic") || showAll("Pastel")} /> 
                         All
                     </label> */}
 
-                    <label for="oil">
+                    <label htmlFor="oil">
                       <input type="checkbox" className="cat-check" id="oil" selected={filter.has("Oil")} onClick={() => filterCheck("Oil")} /> Oil
                     </label>
 
-                    <label for="gouache">
+                    <label htmlFor="gouache">
                       <input type="checkbox" className="cat-check" id="gouache" selected={filter.has("Gouache")} onClick={() => filterCheck("Gouache")} /> Gouache
                     </label>
                     
-                    <label for="acrylic">
+                    <label htmlFor="acrylic">
                       <input type="checkbox" className="cat-check" id="acrylic" selected={filter.has("Acrylic")} onClick={() => filterCheck("Acrylic")} /> Acrylic
                     </label>
                     
-                    <label for="watercolor">
+                    <label htmlFor="watercolor">
                       <input type="checkbox" className="cat-check" id="watercolor" selected={filter.has("Watercolor")} onClick={() => filterCheck("Watercolor")} /> Water Color
                     </label>
                     
-                    <label for="encaustic">
+                    <label htmlFor="encaustic">
                       <input type="checkbox" className="cat-check" id="encaustic" selected={filter.has("Encaustic")}  onClick={() => filterCheck("Encaustic")} /> Encaustic
                     </label>
                     
-                    <label for="pastel">
+                    <label htmlFor="pastel">
                       <input type="checkbox" className="cat-check" id="pastel" selected={filter.has("Pastel")} onClick={() => filterCheck("Pastel")} /> Pastel
                     </label>
                   
