@@ -6,7 +6,6 @@ const CollectionList = [
         imgAlt: "Oil Painting",
         type: "OIL",
         description: "Pour créer de merveilleux effets de texture et pour réaliser des chefs-d'œuvre.",
-        text: "DÉCOUVRIR"
     },
     {
         imgId: 2,
@@ -14,7 +13,6 @@ const CollectionList = [
         imgAlt: "Gouache Painting",
         type: "GOUACHE",
         description: "Peinture opaque utilisée avec l'aquarelle, & nécessite un vernis sur le dessus pour sceller la peinture finie.",
-        text: "DÉCOUVRIR"
     },
     {
         imgId: 3,
@@ -22,7 +20,6 @@ const CollectionList = [
         imgAlt: "Encaustic Painting",
         type: "ENCAUSTIC",
         description: "Connue sous le nom de 'peinture à la cire chaude', pour créer des peintures complexes.",
-        text: "DÉCOUVRIR"
     },
     {
         imgId: 4,
@@ -30,7 +27,6 @@ const CollectionList = [
         imgAlt: "Pastel Painting",
         type: "PASTEL",
         description: "Connu comme fragile, le pigment pouvant se soulever de la surface, il doit être encadré sous verre.",
-        text: "DÉCOUVRIR"
     },
     {
         imgId: 5,
@@ -38,7 +34,6 @@ const CollectionList = [
         imgAlt: "Acrylic Painting",
         type: "ACRYLIC",
         description: "Résistant à l'eau lorsqu'il est complètement sec, sa nature hydrosoluble permet un nettoyage facile.",
-        text: "DÉCOUVRIR"
     },
     {
         imgId: 6,
@@ -46,7 +41,6 @@ const CollectionList = [
         imgAlt: "Watercolor Painting",
         type: "WATERCOLOR",
         description: "Connue pour les couches transparentes qu'elle crée, la peinture reste soluble même lorsqu'elle est sèche.",
-        text: "DÉCOUVRIR"
     },
 ];
 

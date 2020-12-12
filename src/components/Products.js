@@ -16,7 +16,8 @@ const Products = (props) => {
                     <img className="rounded mx-auto d-block" src={props.p.image} alt="" />
                 </div>
                 <button className="shop_it m-3 btn btn-crazy"
-                        onClick={()=>{
+                        onClick={(e)=>{
+                            e.preventDefault();
                             setText("Ajouter encore");
                             const selectionCopie = [...props.selection]
                             selectionCopie.push(props.p)

@@ -10,7 +10,7 @@ const ProductList = [
       id: 2,
       text: "Water Ville", 
       price: 18.00, 
-      category: "Water Color",
+      category: "Watercolor",
       image: "https://www.watervillecreates.org/wp-content/uploads/2018/12/IMG_6989.jpg"
     },
     {

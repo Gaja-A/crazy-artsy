@@ -2,7 +2,7 @@
 import CollectionList from '../json/CollectionList'
 import { Link } from 'react-router-dom';  /* ROUTER */
 
-const CollectionBrands = () => {
+const Collection = () => {
     return (
         <div className="collection-content">
             <div className="d-flex">
@@ -19,14 +19,16 @@ const CollectionBrands = () => {
                             <div className="fade-box">
                                 <p className="card-text">{i.description}</p>
                             </div>
-                            <p className="mt-3"><Link to={'/arts'} className="btn btn-crazy">{i.text}</Link></p>
                         </div>
 
                     </div>
                 )}
             </div>
+            <div className="mt-3 text-center">
+                <Link to={'/arts'} className="btn btn-crazy px-4 py-3">DÉCOUVRIR NOS ARTS MODERNES</Link>
+            </div>
         </div>
     );
 }
     
-export default CollectionBrands;
+export default Collection;

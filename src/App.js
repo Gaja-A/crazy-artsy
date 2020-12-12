@@ -1,27 +1,24 @@
 
-// https://codesandbox.io/s/kitchen-sink-example-forked-yed5p?file=/src/index.js:429-704  -- CART PROVIDER
-
 import './App.css';  /* STYLES */
+
+import { FaPaintBrush, FaSun, FaShoppingCart, FaTrash, FaSearch } from 'react-icons/fa';  /* FONT AWESOME ICONS */
 
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';  /* ROUTER */
 
-import {useState, useEffect} from 'react';  /* USE STATE */
+import { useState } from 'react';  /* USE STATE */
 
 import Modal from "react-bootstrap/Modal";  /* BOOTSTRAP MODAL */
-
 import $ from 'jquery';  /* JQUERY */
-
-import { FaPaintBrush, FaSun, FaSearch, FaShoppingCart, FaTrash } from 'react-icons/fa';  /* FONT AWESOME ICONS */
-
-import ProductList from "./json/ProductList"  /* JSON */
 
 /* IMPORT COMPONENTS */
 import Home from "./components/Home";
 import Collection from "./components/Collection";
-import Products from "./components/Products";
 import Checkout from "./components/Checkout";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Products from "./components/Products";
+
+import ProductList from "./json/ProductList"  /* JSON */
 
 
 /* MAIN CONTENT */
@@ -29,8 +26,8 @@ const App = () => {
 
   // DARK MODE
   const mode = () => {
-      $("a, .navbar, .cart_items, .product-details, body, .card, .collection-text, .newsletter, .copyright-info, footer").toggleClass("dark-mode");
-      $(".products-content").toggleClass("dark-mode-light");
+      $("a, .navbar, .cart_items, .product-details, body, .card, .collection-text, .copyright-info").toggleClass("dark-mode");
+      $(".products-content, .about-block, .newsletter, footer").toggleClass("dark-mode-light");
   }
 
   // CART ITEMS
@@ -42,23 +39,6 @@ const App = () => {
     setSelection(selection.filter(item => item.text !== text));
   };
 
-
-  // CART TOTAL USING useEffect & useState
-  /*
-    const [cart_total, setCartTotal] = useState(0);
-    useEffect(() => {
-      total();
-    }, [selection]);
-
-    const total = () => {
-      let totalVal = 0;
-      for (let i = 0; i < selection.length; i++) {
-        totalVal += selection[i].price;
-      }
-      setCartTotal(totalVal);
-    }; 
-  */ 
-
   // CART TOTAL USING REDUCE
   const currencyOptions = {
     minimumFractionDigits: 2,
@@ -69,21 +49,61 @@ const App = () => {
     return cart_total.toLocaleString(undefined, currencyOptions)
   }
 
+  // CART TOTAL USING useEffect & useState
+    /*
+      const [cart_total, setCartTotal] = useState(0);
+      useEffect(() => {
+        total();
+      }, [selection]);
 
+      const total = () => {
+        let totalVal = 0;
+        for (let i = 0; i < selection.length; i++) {
+          totalVal += selection[i].price;
+        }
+        setCartTotal(totalVal);
+      }; 
+    */ 
 
-  // SEARCH BAR
-  const [search, setSearch] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-  
-  const handleChange = (e) => {
-    setSearch(e.target.value);
+  // SEARCH & FILTER
+  const [searchText, setSearchText] = useState(""); // Search
+  const [filter, setFilter] = useState(new Set()); // Filter
+
+  const handleInputChange = (value) => {
+    setSearchText(value);
+    console.log(searchText)
+  };
+
+  const filterCheck = (value) => {
+    $("#checkboxes").toggle();
+    setSearchText("");
+    if (filter.has(value)) {
+      setFilter(prevFilter => {
+        const newSetFilter = new Set(prevFilter);
+        newSetFilter.delete(value);
+        return newSetFilter;
+      });
+    } else {
+       setFilter(prevFilter => {
+        const newSetFilter = new Set(prevFilter);
+        newSetFilter.add(value);
+        return newSetFilter;
+      });
+    }
   }
 
-  useEffect(() => {
-    const results = ProductList.filter(p => p.text.toLowerCase().includes(search)); /* Do search using product names */
-    setSearchResult(results);
-  }, [search]);
+  let filteredItems = 
+    ProductList.filter(item => {
+      if (filter.size > 0 && !filter.has(item.category))
+        return false;
 
+      // if (searchText.length > 0 && !`${item.text}${item.category}`.toLowerCase().includes(searchText)) // Do search using name and category
+      if (searchText.length > 0 && !`${item.text}`.toLowerCase().includes(searchText)) // Do search using only name
+        return false;
+      
+      return true;
+    }).map((p) =>  <Products p={p} key={p.id} selection={selection} setSelection={setSelection} /> );
+  
 
   // COMPONENTS
   const home =  <Home />
@@ -94,20 +114,87 @@ const App = () => {
       <div className="carousel"></div>
     )
   }
-
+  
   const products = 
       <div className="products-content mt-5">
-        <section className="d-flex">
-          <div className="search-box ml-auto">
-            <input className="search-input" type="text" value={search} onChange={handleChange} name="" placeholder="Rechercher..." />
-            <button className="search-button">
-              <FaSearch style={{"width": "25px", "height": "30px"}} />
-            </button>
-          </div>
-        </section>
-
         <section>
-            { /* Display items using Search */
+        <div>
+          <section className="d-flex filters mx-4 my-2">
+              <form>
+                <div className="checkbox-select">
+
+                  <div className="selectBox" onClick={() => $("#checkboxes").toggle()}>
+                    <select>
+                      <option>Filtrer par catégorie</option>
+                    </select>
+                    <div className="overSelect"></div>
+                  </div>
+
+                  <div id="checkboxes">
+
+                    {/* <label htmlFor="all">
+                      <input type="checkbox" id="all" className="cat-check-all" 
+                            onClick={() => showAll("Oil") || showAll("Gouache") || showAll("Acrylic") ||
+                                           showAll("Watercolor") || showAll("Encaustic") || showAll("Pastel")} /> 
+                        All
+                    </label> */}
+
+                    <label htmlFor="oil">
+                      <input type="checkbox" className="cat-check" id="oil" selected={filter.has("Oil")} onClick={() => filterCheck("Oil")} /> Oil
+                    </label>
+
+                    <label htmlFor="gouache">
+                      <input type="checkbox" className="cat-check" id="gouache" selected={filter.has("Gouache")} onClick={() => filterCheck("Gouache")} /> Gouache
+                    </label>
+                    
+                    <label htmlFor="acrylic">
+                      <input type="checkbox" className="cat-check" id="acrylic" selected={filter.has("Acrylic")} onClick={() => filterCheck("Acrylic")} /> Acrylic
+                    </label>
+                    
+                    <label htmlFor="watercolor">
+                      <input type="checkbox" className="cat-check" id="watercolor" selected={filter.has("Watercolor")} onClick={() => filterCheck("Watercolor")} /> Water Color
+                    </label>
+                    
+                    <label htmlFor="encaustic">
+                      <input type="checkbox" className="cat-check" id="encaustic" selected={filter.has("Encaustic")}  onClick={() => filterCheck("Encaustic")} /> Encaustic
+                    </label>
+                    
+                    <label htmlFor="pastel">
+                      <input type="checkbox" className="cat-check" id="pastel" selected={filter.has("Pastel")} onClick={() => filterCheck("Pastel")} /> Pastel
+                    </label>
+                  
+                  </div>
+
+                </div>
+              </form>
+
+              
+              <div className="search-box">
+                  <input 
+                    className="search-input" 
+                    type="text" 
+                    value={searchText} 
+                    onChange={(e) => handleInputChange(e.target.value)} 
+                    placeholder="Rechercher..." 
+                  />
+
+                  <button className="search-button">
+                      <FaSearch style={{"width": "25px", "height": "30px"}} />
+                  </button>
+              </div>
+          </section>
+          
+          { 
+            filteredItems.length > 0
+          ?
+            <div className="product-grid">
+              {filteredItems}
+            </div>
+          : 
+            <div className="notfound-message w-75 alert alert-danger">Oups 🙁, aucun produit trouvé. Veuillez réessayer.</div>
+          }
+      </div>
+            {/* 
               searchResult.length > 0 
               ?
                 <div className="product-grid">
@@ -117,7 +204,7 @@ const App = () => {
                 </div>
               :
                 <div className="mx-auto mt-4 w-50 text-center alert alert-danger">Oups 🙁, aucun produit trouvé. Veuillez réessayer.</div>
-            }
+            } */}
         </section>
       </div>
 
@@ -141,7 +228,7 @@ const App = () => {
   
     const listItems = selection.map((i) =>
                         <div  className="cart_block" key={i.id}>
-                          <img className="cart_text" src={i.image} />
+                          <img className="cart_text" src={i.image} alt={i.image} />
                           <span className="cart_text">{i.text}</span>
                           <span className="cart_text">{i.price}€</span>
                           <button className="btn btn-crazy cart_text" name={i.text} onClick={handleRemoveItem}>
@@ -177,7 +264,7 @@ const App = () => {
             selection.length > 0 
             ? 
               <span>
-                <a className="btn-continue btn mr-2" onClick={isHide}>Continuer mes achats</a>
+                <Link className="btn-continue btn mr-2" to={"/arts"} onClick={isHide}>Continuer mes achats</Link>
                 <Link className="btn btn-crazy" to={"/checkout"} onClick={isHideZero}>Commander</Link>
               </span>
             : <Link className="btn btn-crazy" to={"/arts"} onClick={isHide}>Ajouter au panier</Link>
@@ -193,9 +280,9 @@ const App = () => {
               <Link to={"/"} className="navbar-brand logo">
                 <FaPaintBrush /> CRAZY ARTSY
               </Link>
-              <a className="nav-link" id="mode" onClick={mode}>
+              <button className="btn nav-link" id="mode" onClick={mode}>
                 <FaSun style={{"width": "26px", "height": "30px"}} />  
-              </a>
+              </button>
             </div>
             <button className="navbar-toggler" style={{"outline": "none"}} type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

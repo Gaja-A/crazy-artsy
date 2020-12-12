@@ -12,7 +12,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 
 ReactDOM.render(
   <HashRouter>
-    <App />,
+    <App />
   </HashRouter>,
   document.getElementById('root')
 );

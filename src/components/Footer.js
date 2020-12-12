@@ -14,7 +14,7 @@ const Footer = () => {
         event.preventDefault();
         setEmail("");
 
-        if($("#email") && $("#email").val() == "") {
+        if($("#email") && $("#email").val() === "") {
             $("#error-message")
                 .addClass(" alert alert-danger")
                 .removeClass("alert-success")
