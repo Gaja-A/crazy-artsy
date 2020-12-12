@@ -1,4 +1,3 @@
-
 import {useState} from 'react';
 
 const Products = (props) => {
@@ -31,4 +30,3 @@ const Products = (props) => {
 }
 
 export default Products;
-

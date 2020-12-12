@@ -1,4 +1,3 @@
-
 const CollectionList = [
     {
         imgId: 1,

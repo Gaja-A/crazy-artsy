@@ -1,4 +1,3 @@
-
 import CollectionList from '../json/CollectionList'
 import { Link } from 'react-router-dom';  /* ROUTER */
 

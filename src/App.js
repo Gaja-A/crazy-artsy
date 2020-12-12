@@ -1,4 +1,3 @@
-
 import './App.css';  /* STYLES */
 
 import { FaPaintBrush, FaSun, FaShoppingCart, FaTrash, FaSearch } from 'react-icons/fa';  /* FONT AWESOME ICONS */
