@@ -130,14 +130,7 @@ const App = () => {
                   </div>
 
                   <div id="checkboxes">
-
-                    {/* <label htmlFor="all">
-                      <input type="checkbox" id="all" className="cat-check-all" 
-                            onClick={() => showAll("Oil") || showAll("Gouache") || showAll("Acrylic") ||
-                                           showAll("Watercolor") || showAll("Encaustic") || showAll("Pastel")} /> 
-                        All
-                    </label> */}
-
+                    
                     <label htmlFor="oil">
                       <input type="checkbox" className="cat-check" id="oil" selected={filter.has("Oil")} onClick={() => filterCheck("Oil")} /> Oil
                     </label>
@@ -163,7 +156,6 @@ const App = () => {
                     </label>
                   
                   </div>
-
                 </div>
               </form>
 
