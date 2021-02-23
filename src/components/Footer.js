@@ -1,7 +1,9 @@
 import {useState} from 'react';
 import $ from 'jquery';
 
+
 const Footer = () => {
+    let anneeEnCours = (new Date()).getFullYear();
 
     const [email, setEmail] = useState("");
 
@@ -45,7 +47,7 @@ const Footer = () => {
                 </form>
             </div>
             <div className="copyright-info">
-                <span> © Copyright - 2020 - Crazy Artsy. Tous droits réservés. </span>
+                <span> © Copyright - {anneeEnCours} - Crazy Artsy. Tous droits réservés. </span>
             </div>
         </footer>  
     );
